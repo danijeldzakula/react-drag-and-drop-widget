@@ -1,0 +1,113 @@
+@charset 'utf-8';
+@use '../utils/variables' as *;
+
+
+/* TODO: test this out */
+.ripple-button {
+  border-radius: 3px;
+  border: none;
+  padding: 0 24px;
+  background: #1976d2;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  margin: 0;
+  min-width: 180px;
+}
+
+.ripple-button > .ripple {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background: #b0d7fe;
+  display: block;
+  content: "";
+  border-radius: 50%;
+  opacity: 1;
+  transform: scale(0);
+  animation: 0.5s ease 1 forwards ripple;
+  will-change: transform, opacity;
+}
+
+.ripple-button > .content {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(7);
+    opacity: 0;
+  }
+}
+
+.btn {
+  padding: 8px;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  border-radius: $radiusBase;
+  background-color: $white;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.314;
+  word-spacing: 0.01em;
+  cursor: pointer;
+  display: flex;
+  grid-gap: #{$gapBase};
+  align-items: center;
+
+  &:focus {
+    outline: 1px solid white;
+  }
+
+  & .icon {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  & .text {
+    line-height: normal;
+  }
+
+  &-small {
+    font-size: 15px;
+    padding: 8px 12px;
+  }
+
+  &-medium {
+    font-size: 17px;
+    padding: 12px 16px;
+  }
+
+  &-large {
+    font-size: 19px;
+    padding: 16px 24px;
+  }
+
+  &-link {
+    color: darken($color: $white, $amount: 50);
+  }
+
+  &-primary {
+    color: $white;
+    background-color: $primary;
+    transition: background-color 0.3s ease;
+    will-change: background-color;
+
+    &-link {
+      color: $primary !important;
+    }
+
+    &:is(:hover, :active) {
+      background-color: darken($color: $primary, $amount: 5);
+    }
+  }
+
+  &-success {
+    color: $white;
+    background-color: #0e6c29;
+  }
+}
