@@ -13,9 +13,9 @@ This React.js application, written in TypeScript, uses React Context for state m
 ```bash 
 # Clone repository code 
 
-$ git clone <URL-OF-REPO>
+$ git clone https://github.com/danijeldzakula/react-drag-and-drop-widget.git
 
-$ cd <NAME-OF-REPO>
+$ cd react-drag-and-drop-widget
 ```
 
 ## Requirements
